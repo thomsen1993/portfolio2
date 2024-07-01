@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Philosopher", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  @apply bg-slate-100;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+p::first-letter,
+figcaption::first-letter, 
+h1::first-letter,
+h2::first-letter,
+h3::first-letter,
+h4::first-letter,
+h5::first-letter {
+  @apply text-blue-500
+}
+
+p::first-letter,
+figcaption::first-letter {
+  @apply text-xl
+}
+
+h2 {
+  @apply text-2xl text-center my-2;
+}
+
+
+h3 {
+  @apply text-xl my-2;
+}
+
+p {
+  @apply hyphens-auto break-words text-justify;
+}
+
+.wiggleBorder {
+  border-radius: 50% 20% / 10% 60%;
+  @apply border-2 border-blue-400 shadow-md shadow-gray-300 p-1;
+}
+
+.icons {
+  @apply w-24 h-24 text-slate-400
+}
+
+input,
+textarea {
+  @apply border border-blue-400 rounded-md px-2 py-1
+}
