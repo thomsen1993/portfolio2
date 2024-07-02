@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Header() {
   const navigator = [
@@ -24,12 +25,12 @@ export default function Header() {
       <ul className="flex gap-4 ">
         {navigator.map((item) => (
           <li key={item.text}>
-            <a
+            <Link
               href={item.href}
-              className="relative before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[1px] before:bg-blue-400 before:transition-all before:duration-300 hover:text-blue-400 hover:before:w-full transition-all duration-300 py-1"
+              className="btn"
             >
               {item.text}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

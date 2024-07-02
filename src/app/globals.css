@@ -63,5 +63,13 @@ p {
 
 input,
 textarea {
-  @apply border border-blue-400 rounded-md px-2 py-1
+  @apply border-b border-blue-400 px-2 py-1
+}
+
+.colorBtn {
+  @apply flex items-center justify-center gap-2 border border-blue-400 rounded-md hover:bg-blue-400/50 hover:text-white transition duration-300 py-1
+}
+
+.btn {
+  @apply relative sm:flex sm:items-center sm:gap-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[1px] before:bg-blue-400 before:transition-all before:duration-300 hover:text-blue-400 hover:before:w-full transition-all duration-300 py-1
 }

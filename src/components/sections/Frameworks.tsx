@@ -6,10 +6,9 @@ import useSupabaseData from "@/hooks/useSupabaseData";
 import LoaderSkelet from "@/components/LoaderSkelet";
 import Error from "@/components/Error";
 
-import { FaHtml5, FaCss3Alt, FaReact, FaNode } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaReact, FaNode, FaGithub } from "react-icons/fa";
 import { RiTailwindCssFill, RiSupabaseFill  } from "react-icons/ri";
 import { SiNextdotjs, SiMongodb, SiTypescript } from "react-icons/si";
-import { VscJson } from "react-icons/vsc";
 
 const Frameworks = () => {
   const { data, loading, error } = useSupabaseData("infoEN");
@@ -37,7 +36,7 @@ const Frameworks = () => {
             <FaNode className="icons"/>
             <SiMongodb className="icons"/>
             <RiSupabaseFill className="icons"/>
-            <VscJson className="icons"/>
+            <FaGithub className="icons"/>
           </div>
         </>
       )}

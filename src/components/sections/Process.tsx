@@ -32,7 +32,7 @@ const Process: React.FC = () => {
           <h2>My process</h2>
           <div className="grid grid-cols-5 gap-4">
             {data.map((item) => (
-              <figure className="group">
+              <figure key={item.id} className="group">
                 <img src={item.imgSrc} alt={item.description} className="wiggleBorder group-hover:scale-110 transition duration-300 overflow-hidden"/>
                 <figcaption className="w-max bg-white rounded-md -translate-y-3 px-3 mx-auto">{item.description}</figcaption>
               </figure>

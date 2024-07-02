@@ -12,7 +12,6 @@ import { IoIosSend } from "react-icons/io";
 
 const Contact = () => {
   const { data, loading, error, insertData } = useSupabaseData("contact");
-
   const [doneMessage, setDoneMessage] = useState(false);
 
   if (loading) {
@@ -75,7 +74,7 @@ const Contact = () => {
             ></textarea>
             <button
               type="submit"
-              className="flex items-center justify-center gap-4 border border-blue-400 rounded-md py-1 hover:bg-blue-400/50 hover:text-white text-blue-500 transition duration-300"
+              className="colorBtn"
             >
               <IoIosSend />
               Send
