@@ -8,13 +8,13 @@ import useAuth from "@/hooks/useAuth";
 import { FaUserCircle } from "react-icons/fa";
 
 import useSupabase from "@/hooks/useSupabaseData";
-import Wrapper from "@/components/Wrapper";
 
 interface contactProps {
   id: number;
   name: string;
   company: string;
   message: string;
+  created_at: string;
 }
 
 const page: React.FC = () => {
@@ -56,18 +56,31 @@ const page: React.FC = () => {
           Logout
         </button>
       </div>
-      {loadContact && <div>Loading...</div>}
+      {loadContact && <div>Loading...!</div>}
       {errorContact && <div>Error: {errorContact}</div>}
       {dataContact && (
-        <div>
+        <div className="max-w-3xl mx-auto">
+          <h3>Messages: </h3>
           {dataContact.map((item) => (
-            <Wrapper key={item.id}>
-              <div className="border-l">
-                <p>{item.name}</p>
-                <p>{item.company}</p>
+            <div key={item.id} className="grid grid-cols-7 capitalize my-5">
+              <span className="col-span-7">
+                {new Date(item.created_at).toLocaleString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                  hour: "numeric",
+                  minute: "numeric",
+                })}
+              </span>
+              <div className="border rounded-md p-2 col-span-2 shadow-md mb-2">
+                <div className="flex items-center col-span-7">
+                  <FaUserCircle className="w-6 h-6 text-slate-300 pr-1" />
+                  <p>{item.name}</p>
+                </div>
+                <span className="text-sm border rounded-full px-2 py-1">{item.company}</span>
               </div>
-              <p>{item.message}</p>
-            </Wrapper>
+              <p className="border rounded-md col-start-2 row-start-3 col-span-6 shadow-md p-2">{item.message}</p>
+            </div>
           ))}
         </div>
       )}

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 
 import Wrapper from "@/components/Wrapper";
 
@@ -19,7 +20,7 @@ const page: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center h-screen">
       <Wrapper id="login">
         <h2>Admin - dashboard</h2>
         <form onSubmit={handleSubmit} className="w-96 my-10">
@@ -64,6 +65,7 @@ const page: React.FC = () => {
           {error && <span style={{ color: "red" }}>{error}</span>}
         </form>
       </Wrapper>
+      <Link href="/" className=" text-blue-400 hover:underline">Home page</Link>
     </div>
   );
 };
