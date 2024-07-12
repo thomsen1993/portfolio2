@@ -55,7 +55,7 @@ const Contact = () => {
             className="flex flex-col gap-4 border rounded-md px-4 pb-5"
           >
             <span className="bg-white -translate-y-1/2 w-max border rounded-md px-2 -mb-4">
-              Let's work together, send me a message
+              Let&apos;s work together, send me a message
             </span>
             <input type="text" name="name" id="" placeholder="Name" required />
             <input
@@ -72,10 +72,7 @@ const Contact = () => {
               placeholder="Message"
               required
             ></textarea>
-            <button
-              type="submit"
-              className="colorBtn"
-            >
+            <button type="submit" className="colorBtn">
               <IoIosSend />
               Send
             </button>
