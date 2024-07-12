@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react";
 import supabase from "../lib/supabase";
 
-interface FetchResult<T> {
-  data: T[] | null;
+interface FetchResult {
+  data: any[] | null;
   loading: boolean;
   error: string | null;
 }
 
 const useSupabaseData = <T>(tableName: string) => {
-  const [result, setResult] = useState<FetchResult<T>>({
+  const [result, setResult] = useState<FetchResult>({
     data: null,
     loading: true,
     error: null,
@@ -19,7 +19,7 @@ const useSupabaseData = <T>(tableName: string) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let { data, error } = await supabase.from<T>(tableName).select("*");
+        let { data, error } = await supabase.from(tableName).select("*");
 
         if (error) {
           throw error;
@@ -38,7 +38,7 @@ const useSupabaseData = <T>(tableName: string) => {
   const insertData = async (newData: Partial<T>) => {
     try {
       const { data, error } = await supabase
-      .from<T>(tableName)
+      .from(tableName)
       .insert([newData]).
       select();
       if (error) {
