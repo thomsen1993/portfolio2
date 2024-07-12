@@ -7,7 +7,7 @@ import useAuth from "@/hooks/useAuth";
 
 import { BiLoaderCircle } from "react-icons/bi";
 
-const page: React.FC = () => {
+const Page: React.FC = () => {
   const { login, error, loading } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -71,4 +71,4 @@ const page: React.FC = () => {
   );
 };
 
-export default page;
+export default Page;

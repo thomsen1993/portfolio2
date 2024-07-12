@@ -4,12 +4,11 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 import useAuth from "@/hooks/useAuth";
+import useSupabase from "@/hooks/useSupabaseData";
 
 import { FaUserCircle } from "react-icons/fa";
 
-import useSupabase from "@/hooks/useSupabaseData";
-
-interface contactProps {
+interface ContactProps {
   id: number;
   name: string;
   company: string;
@@ -17,12 +16,12 @@ interface contactProps {
   created_at: string;
 }
 
-const page: React.FC = () => {
+const Page: React.FC = () => {
   const {
     data: dataContact,
     loading: loadContact,
     error: errorContact,
-  } = useSupabase<contactProps>("contact");
+  } = useSupabase<ContactProps>("contact");
 
   const { user, loading, logout } = useAuth();
   const router = useRouter();
@@ -88,4 +87,4 @@ const page: React.FC = () => {
   );
 };
 
-export default page;
+export default Page;
