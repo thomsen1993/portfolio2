@@ -44,7 +44,7 @@ const page: React.FC = () => {
   return (
     <div>
       <h2>Dashboard</h2>
-      <div className="flex justify-between border border-sky-900 bg-sky-700 text-white px-2 py-1">
+      <header className="flex justify-between border border-sky-900 bg-sky-700 text-white px-2 py-1">
         <div className="flex items-center gap-4">
           <FaUserCircle className="w-10 h-10" />
           <p>Welcome, {user.email}</p>
@@ -55,7 +55,7 @@ const page: React.FC = () => {
         >
           Logout
         </button>
-      </div>
+      </header>
       {loadContact && <div>Loading...!</div>}
       {errorContact && <div>Error: {errorContact}</div>}
       {dataContact && (
@@ -74,10 +74,10 @@ const page: React.FC = () => {
               </span>
               <div className="border rounded-md p-2 col-span-2 shadow-md mb-2">
                 <div className="flex items-center col-span-7">
-                  <FaUserCircle className="w-6 h-6 text-slate-300 pr-1" />
+                  <FaUserCircle className="w-6 h-6 text-slate-300 bg-sky-900 rounded-full mr-1" />
                   <p>{item.name}</p>
                 </div>
-                <span className="text-sm border rounded-full px-2 py-1">{item.company}</span>
+                <span className="text-sm rounded-full bg-sky-900 text-slate-300 px-2 py-1">{item.company}</span>
               </div>
               <p className="border rounded-md col-start-2 row-start-3 col-span-6 shadow-md p-2">{item.message}</p>
             </div>

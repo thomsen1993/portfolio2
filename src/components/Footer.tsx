@@ -48,7 +48,6 @@ const Footer = () => {
           ))}
           <Link href="mailto:benny.thomsen20@gmail.com" className="btn"><RiMailSendFill className=" mx-auto"/>Email</Link>
         </div>
-        <Link href="/dashboard">Admin</Link>
       </Wrapper>
     </footer>
   );

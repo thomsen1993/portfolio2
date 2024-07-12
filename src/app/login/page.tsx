@@ -3,8 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-import Wrapper from "@/components/Wrapper";
-
 import useAuth from "@/hooks/useAuth";
 
 import { BiLoaderCircle } from "react-icons/bi";
@@ -18,10 +16,13 @@ const page: React.FC = () => {
     e.preventDefault();
     await login(email, password);
   };
+  if (loading) {
+    return <div className="w-screen h-screen cursor-wait bg-black/10"></div>;
+  }
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <Wrapper id="login">
+      <div>
         <h2>Admin - dashboard</h2>
         <form onSubmit={handleSubmit} className="w-96 my-10">
           <div className="flex flex-col border-x border-t border-blue-400 rounded-md shadow-md mb-10">
@@ -35,10 +36,10 @@ const page: React.FC = () => {
               type="text"
               name="username"
               id="username"
-              placeholder="'Paul'"
+              placeholder="'Paul@gmail.com'"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="rounded-md "
+              className="rounded-md border-none"
             />
           </div>
           <div className="flex flex-col border-x border-t border-blue-400 rounded-md shadow-md mb-10">
@@ -55,16 +56,16 @@ const page: React.FC = () => {
               placeholder="*******"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="rounded-md"
+              className="rounded-md border-none"
             />
           </div>
-          <button type="submit" disabled={loading} className="colorBtn flex items-center gap-1 w-full">
+          <button type="submit" disabled={loading} className="colorBtn bg-white flex items-center gap-1 w-full">
             {loading && <BiLoaderCircle className="animate-spin" />}
             Log in
           </button>
           {error && <span style={{ color: "red" }}>{error}</span>}
         </form>
-      </Wrapper>
+      </div>
       <Link href="/" className=" text-blue-400 hover:underline">Home page</Link>
     </div>
   );

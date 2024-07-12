@@ -32,7 +32,7 @@ const Featured = () => {
       {data && (
         <>
           <h2>Featured work</h2>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-3 gap-4">
             {data
               .toSorted((a, b) => a.id - b.id)
               .map((item) => (
@@ -43,7 +43,7 @@ const Featured = () => {
                   <img
                     src={item.imgSrc}
                     alt=""
-                    className="wiggleBorder group-hover:translate-y-[-110%] transition duration-300 my-2"
+                    className="wiggleBorder group-hover:translate-y-[-120%] transition duration-300 my-2"
                   />
                   <figcaption className="absolute bottom-[-100%] group-hover:bottom-0 transition-all duration-300 text-sm">
                     {item.description}

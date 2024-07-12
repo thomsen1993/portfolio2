@@ -26,7 +26,7 @@ const Frameworks = () => {
       {data && (
         <>
           <h2>Frameworks</h2>
-          <div className="flex justify-between w-[130%] animate-icons">
+          <div className="flex justify-between gap-3 w-[130%] animate-icons">
             <FaHtml5 className="icons" />
             <FaCss3Alt className="icons"/>
             <SiTypescript className="icons"/>

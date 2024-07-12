@@ -33,7 +33,7 @@ const Profile: React.FC = () => {
     <Wrapper id="profile">
       {infoEN && (
         <>
-          <div className="grid grid-cols-2 items-center gap-4">
+          <div className="grid sm:grid-cols-2 items-center gap-4">
             <figure>
               <img
                 src={infoEN[0].img}
