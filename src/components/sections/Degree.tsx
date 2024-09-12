@@ -32,15 +32,8 @@ const Degree: React.FC = () => {
 
   return (
     <Wrapper id="degree">
-      <h2>My degree</h2>
-      <a
-        href="https://tenqlpcmcforcjxscaxw.supabase.co/storage/v1/object/public/pictures/Benny-CV%20(1).pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        CV
-      </a>
-      <div className="grid grid-cols-2 gap-5">
+      <h2>My degree / CV</h2>
+      <div className="grid gap-5 sm:grid-cols-2">
         {data.map((event) => (
           <CostumImg
             key={event.id}

@@ -19,6 +19,10 @@ export default function Header() {
       text: "Contact",
       href: "#contact",
     },
+    {
+      text: "Degree/CV",
+      href: "#degree",
+    },
   ];
   return (
     <header className="sticky top-0 w-max bg-white/80 backdrop-blur-sm shadow-md rounded-full mx-auto p-5 mt-5 z-50">
