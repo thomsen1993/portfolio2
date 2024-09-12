@@ -8,6 +8,7 @@ import Featured from "@/components/sections/Featured";
 import Process from "@/components/sections/Process";
 import Profile from "@/components/sections/Profile";
 import Frameworks from "@/components/sections/Frameworks";
+import Degree from "@/components/sections/Degree";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <About />
       <Process />
       <Frameworks />
+      <Degree />
       <Contact />
       <Footer />
     </main>

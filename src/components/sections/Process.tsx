@@ -7,6 +7,7 @@ import LoaderSkelet from "../LoaderSkelet";
 import Error from "@/components/Error";
 
 import Wrapper from "../Wrapper";
+import CostumImg from "../CostumImg";
 
 interface dataProps {
   id: number;
@@ -32,10 +33,7 @@ const Process: React.FC = () => {
           <h2>My process</h2>
           <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-4">
             {data.map((item) => (
-              <figure key={item.id} className="group">
-                <img src={item.imgSrc} alt={item.description} className="wiggleBorder group-hover:scale-105 transition duration-300 overflow-hidden"/>
-                <figcaption className="w-max bg-white rounded-md -translate-y-3 px-3 mx-auto">{item.description}</figcaption>
-              </figure>
+              <CostumImg key={item.id} src={item.imgSrc} alt={item.description} description={item.description} />
             ))}
           </div>
         </>

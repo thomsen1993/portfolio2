@@ -63,7 +63,12 @@ p {
 
 input,
 textarea {
-  @apply border-b border-blue-400 px-2 py-1
+  @apply bg-blue-400/20 rounded-md px-2 py-1
+}
+
+input::placeholder,
+textarea::placeholder {
+  @apply text-blue-400
 }
 
 .colorBtn {
