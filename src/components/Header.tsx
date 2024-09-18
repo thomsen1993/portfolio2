@@ -16,12 +16,12 @@ export default function Header() {
       href: "#process",
     },
     {
-      text: "Contact",
-      href: "#contact",
-    },
-    {
       text: "Degree/CV",
       href: "#degree",
+    },
+    {
+      text: "Contact",
+      href: "#contact",
     },
   ];
   return (

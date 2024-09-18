@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Benny Thomsen portfolio",
-  description: "An young web developer based in Aarhus, Denmark",
+  description: "Junior web developer based in Aarhus, Denmark",
 };
 
 export default function RootLayout({

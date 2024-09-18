@@ -21,7 +21,7 @@ const CostumImg: React.FC<dataProps> = ({
         <img
           src={src}
           alt={alt}
-          className="wiggleBorder group-hover:scale-105 transition duration-300 overflow-hidden h-full object-cover"
+          className="wiggleBorder transition duration-300 overflow-hidden h-full object-cover"
         />
         <figcaption className="w-max bg-white rounded-md -translate-y-3 px-3 mx-auto">
           {description}
