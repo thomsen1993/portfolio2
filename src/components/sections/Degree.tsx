@@ -7,6 +7,7 @@ import LoaderSkelet from "@/components/LoaderSkelet";
 import Error from "@/components/Error";
 import Wrapper from "../Wrapper";
 import CostumImg from "../CostumImg";
+import ScrollAnimations from "../ScrollAnimations";
 
 interface dataProps {
   id: number;
@@ -31,20 +32,22 @@ const Degree: React.FC = () => {
   }
 
   return (
-    <Wrapper id="degree">
-      <h2>My degree / CV</h2>
-      <div className="grid gap-5 sm:grid-cols-2">
-        {data.map((event) => (
-          <CostumImg
-            key={event.id}
-            src={event.src}
-            alt={event.name}
-            description={event.name}
-            href={event.href}
-          />
-        ))}
-      </div>
-    </Wrapper>
+    <ScrollAnimations>
+      <Wrapper id="degree">
+        <h2>My degree / CV</h2>
+        <div className="grid gap-5 sm:grid-cols-2">
+          {data.map((event) => (
+            <CostumImg
+              key={event.id}
+              src={event.src}
+              alt={event.name}
+              description={event.name}
+              href={event.href}
+            />
+          ))}
+        </div>
+      </Wrapper>
+    </ScrollAnimations>
   );
 };
 export default Degree;

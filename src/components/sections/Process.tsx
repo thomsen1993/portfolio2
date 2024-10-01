@@ -8,6 +8,7 @@ import Error from "@/components/Error";
 
 import Wrapper from "../Wrapper";
 import CostumImg from "../CostumImg";
+import ScrollAnimations from "../ScrollAnimations";
 
 interface dataProps {
   id: number;
@@ -27,18 +28,25 @@ const Process: React.FC = () => {
   }
 
   return (
-    <Wrapper id="process">
-      {data && (
-        <>
-          <h2>My process</h2>
-          <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-4">
-            {data.map((item) => (
-              <CostumImg key={item.id} src={item.imgSrc} alt={item.description} description={item.description} />
-            ))}
-          </div>
-        </>
-      )}
-    </Wrapper>
+    <ScrollAnimations>
+      <Wrapper id="process">
+        {data && (
+          <>
+            <h2>My process</h2>
+            <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-4">
+              {data.map((item) => (
+                <CostumImg
+                  key={item.id}
+                  src={item.imgSrc}
+                  alt={item.description}
+                  description={item.description}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </Wrapper>
+    </ScrollAnimations>
   );
 };
 export default Process;

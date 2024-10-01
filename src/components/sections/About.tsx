@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
-
 import useSupabaseData from "@/hooks/useSupabaseData";
 import LoaderSkelet from "@/components/LoaderSkelet";
 import Error from "@/components/Error";
+
+import ScrollAnimations from "../ScrollAnimations";
 
 interface dataProps {
   id: number;
@@ -26,18 +26,21 @@ const About: React.FC = () => {
   }
 
   return (
-    <section id="about" className="max-w-3xl p-5 mx-auto">
-      {data && (
-        <>
-          <h2>About me</h2>
+    <ScrollAnimations>
+      <section id="about" className="max-w-3xl p-5 mx-auto">
+        {data && (
           <div>
-            <p className="text-lg mb-2">{data[0].name}</p>
-            <p className="mb-2">{data[0].about}</p>
-            <p>{data[0].content}</p>
+            <h2>About me</h2>
+            <div>
+              <p className="text-lg mb-2">{data[0].name}</p>
+              <p className="mb-2">{data[0].about}</p>
+              <p>{data[0].content}</p>
+            </div>
           </div>
-        </>
-      )}
-    </section>
+        )}
+      </section>
+    </ScrollAnimations>
   );
 };
+
 export default About;

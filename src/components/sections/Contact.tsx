@@ -9,6 +9,7 @@ import LoaderSkelet from "../LoaderSkelet";
 import Wrapper from "../Wrapper";
 
 import { IoIosSend } from "react-icons/io";
+import ScrollAnimations from "../ScrollAnimations";
 
 const Contact = () => {
   const { data, loading, error, insertData } = useSupabaseData("contact");
@@ -46,45 +47,53 @@ const Contact = () => {
   };
 
   return (
-    <Wrapper id="contact">
-      {data && (
-        <>
-          <h2 className="mb-5">Contact</h2>
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col gap-4 border rounded-md px-4 pb-5"
-          >
-            <span className="bg-white -translate-y-1/2 w-max border rounded-md px-2 -mb-4">
-              Let&apos;s work together, send me a message
-            </span>
-            <input type="text" name="name" id="" placeholder="Name" required />
-            <input
-              type="text"
-              name="company"
-              id=""
-              placeholder="Company name"
-              required
-            />
-            <textarea
-              name="message"
-              id=""
-              rows={5}
-              placeholder="Message"
-              required
-            ></textarea>
-            <button type="submit" className="colorBtn">
-              <IoIosSend />
-              Send
-            </button>
-            {doneMessage && (
-              <span className="text-green-500 bg-green-400/30 border border-green-500 rounded-md px-2 py-1 animate-pulse">
-                Message sent!
+    <ScrollAnimations>
+      <Wrapper id="contact">
+        {data && (
+          <>
+            <h2 className="mb-5">Contact</h2>
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-4 border rounded-md px-4 pb-5"
+            >
+              <span className="bg-white -translate-y-1/2 w-max border rounded-md px-2 -mb-4">
+                Let&apos;s work together, send me a message
               </span>
-            )}
-          </form>
-        </>
-      )}
-    </Wrapper>
+              <input
+                type="text"
+                name="name"
+                id=""
+                placeholder="Name"
+                required
+              />
+              <input
+                type="text"
+                name="company"
+                id=""
+                placeholder="Company name"
+                required
+              />
+              <textarea
+                name="message"
+                id=""
+                rows={5}
+                placeholder="Message"
+                required
+              ></textarea>
+              <button type="submit" className="colorBtn">
+                <IoIosSend />
+                Send
+              </button>
+              {doneMessage && (
+                <span className="text-green-500 bg-green-400/30 border border-green-500 rounded-md px-2 py-1 animate-pulse">
+                  Message sent!
+                </span>
+              )}
+            </form>
+          </>
+        )}
+      </Wrapper>
+    </ScrollAnimations>
   );
 };
 
