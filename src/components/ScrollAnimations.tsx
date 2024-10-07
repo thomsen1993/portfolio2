@@ -1,36 +1,37 @@
 "use client";
 
 import { useEffect, useRef, ReactNode } from "react";
-
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 interface ScrollAnimationsProps {
-  children: ReactNode; 
+  children: ReactNode;
 }
 
 const ScrollAnimations: React.FC<ScrollAnimationsProps> = ({ children }) => {
-  const animate = useRef<HTMLDivElement>(null);
+  const bounce = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     gsap.fromTo(
-      animate.current,
-      { y: 100 },
+      bounce.current,
+      { y: 100, opacity: 0 },
       {
         y: 0,
+        opacity: 1,
         duration: 1.5,
-        ease: "bounce.out",
+        ease: "power3.out",
         scrollTrigger: {
-          trigger: animate.current,
+          trigger: bounce.current,
           start: "top 100%",
           toggleActions: "play none none reset",
         },
       }
     );
   }, [children]);
-  return <div ref={animate}>{children}</div>;
+
+  return <div ref={bounce}>{children}</div>;
 };
 
 export default ScrollAnimations;

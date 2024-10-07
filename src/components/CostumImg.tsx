@@ -21,9 +21,9 @@ const CostumImg: React.FC<dataProps> = ({
         <img
           src={src}
           alt={alt}
-          className="wiggleBorder transition duration-300 overflow-hidden h-full object-cover"
+          className="wiggleBorder transition duration-300 sm:h-full h-32 w-full overflow-hidden object-cover"
         />
-        <figcaption className="w-max bg-white rounded-md -translate-y-3 px-3 mx-auto">
+        <figcaption className="w-max bg-background border border-accent rounded-md -translate-y-3 px-3 mx-auto">
           {description}
         </figcaption>
         {href && (
@@ -33,7 +33,7 @@ const CostumImg: React.FC<dataProps> = ({
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="bg-blue-400 ext-blue-400 rounded-md shadow-md px-5 py-2">Download file</span>
+            <span className="bg-accent ext-blue-400 rounded-md px-5 py-2">Download file</span>
           </a>
         )}
       </figure>

@@ -6,6 +6,7 @@ import gsap from "gsap";
 import useSupabaseData from "@/hooks/useSupabaseData";
 import Loader from "@/components/Loader";
 import Error from "@/components/Error";
+
 import Wrapper from "../Wrapper";
 import { FlipWords } from "../ui/flip-words";
 
@@ -63,9 +64,9 @@ const Profile: React.FC = () => {
               alt=""
               className="wiggleBorder animate-bobble h-96 w-full object-top object-cover"
             />
-            <span className="text-sm border text-blue-500 border-blue-400 bg-blue-400/30 rounded-full px-2">
+            <p className="text-center border text-accent border-accent bg-accent/30 rounded-full px-2 mt-5">
               {infoEN[0].job}
-            </span>
+            </p>
           </div>
           <div>
             <div ref={title}>

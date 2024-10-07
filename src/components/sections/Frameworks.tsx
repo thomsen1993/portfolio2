@@ -22,7 +22,7 @@ const Frameworks = () => {
   }
 
   return (
-    <section id="about" className="overflow-hidden py-5">
+    <section className="overflow-hidden pt-10">
       {data && (
         <>
           <h2>Frameworks</h2>

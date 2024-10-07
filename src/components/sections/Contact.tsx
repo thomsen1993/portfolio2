@@ -54,11 +54,11 @@ const Contact = () => {
             <h2 className="mb-5">Contact</h2>
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col gap-4 border rounded-md px-4 pb-5"
+              className="flex flex-col gap-4 border border-accent rounded-md px-4 pb-5"
             >
-              <span className="bg-white -translate-y-1/2 w-max border rounded-md px-2 -mb-4">
+              <p className="bg-background -translate-y-1/2 border border-accent rounded-md px-2 -mb-4">
                 Let&apos;s work together, send me a message
-              </span>
+              </p>
               <input
                 type="text"
                 name="name"

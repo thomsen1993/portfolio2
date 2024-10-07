@@ -6,12 +6,55 @@ html {
   scroll-behavior: smooth;
 }
 
+section {
+  scroll-margin-top: 125px;
+
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 1 4 9;
+    --cardsBg: 13 17 23;
+    --text: 205 205 205;
+    --accent: 105 170 250;
+  }
+}
+
+.light {
+  --background: 241 245 249;
+  --cardsBg: 255 255 255;
+  --text: 0 0 0;
+  --accent: 105 170 250;
+}
+
+.dark {
+  --background: 1 4 9;
+  --cardsBg: 13 17 23;
+  --text: 205 205 205;
+  --accent: 105 170 250;
+}
+
+.red {
+  --background: 60 21 24;
+  --cardsBg: 105 20 14;
+  --text: 242 243 174;
+  --accent: 213 137 54;
+}
+
+.olive {
+  --background: 66 62 55;
+  --cardsBg: 110 103 95;
+  --text: 237 235 215;
+  --accent: 227 178 60;
+}
+
 body {
   font-family: "Philosopher", sans-serif;
   font-weight: 400;
   font-style: normal;
   line-height: 1.5;
-  @apply bg-slate-100;
+  color: rgb(237, 235, 215);
 }
 
 h1,
@@ -25,24 +68,23 @@ h5 {
 }
 
 p::first-letter,
-figcaption::first-letter, 
+figcaption::first-letter,
 h1::first-letter,
 h2::first-letter,
 h3::first-letter,
 h4::first-letter,
 h5::first-letter {
-  @apply text-blue-500
+  @apply text-accent;
 }
 
 p::first-letter,
 figcaption::first-letter {
-  @apply text-xl
+  @apply text-xl;
 }
 
 h2 {
-  @apply text-2xl text-center my-2;
+  @apply text-2xl text-center pb-10 ;
 }
-
 
 h3 {
   @apply text-xl my-2;
@@ -52,29 +94,24 @@ p {
   @apply hyphens-auto break-words text-justify;
 }
 
+input,
+textarea {
+  @apply border border-accent bg-cardsBg rounded-md px-2 py-1;
+}
+
 .wiggleBorder {
   border-radius: 50% 20% / 10% 60%;
-  @apply border-2 border-blue-400 shadow-md shadow-gray-300 p-1;
+  @apply border-2 border-accent p-1;
 }
 
 .icons {
-  @apply w-24 h-24 text-slate-400
-}
-
-input,
-textarea {
-  @apply bg-blue-400/20 rounded-md px-2 py-1
-}
-
-input::placeholder,
-textarea::placeholder {
-  @apply text-blue-400
+  @apply w-24 h-24 text-accent;
 }
 
 .colorBtn {
-  @apply flex items-center justify-center gap-2 border border-blue-400 rounded-md hover:bg-blue-400/50 hover:text-white transition duration-300 py-1
+  @apply flex items-center justify-center gap-2 border border-accent rounded-md hover:bg-background hover:text-accent transition duration-300 py-1;
 }
 
 .btn {
-  @apply relative sm:flex sm:items-center sm:gap-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[1px] before:bg-blue-400 before:transition-all before:duration-300 hover:text-blue-400 hover:before:w-full transition-all duration-300 py-1
+  @apply relative before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[1px] before:bg-accent before:transition-all before:duration-300 hover:text-accent hover:before:w-full transition-all duration-300;
 }

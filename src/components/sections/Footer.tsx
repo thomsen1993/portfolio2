@@ -2,7 +2,7 @@ import React from "react";
 
 import Link from "next/link";
 
-import Wrapper from "./Wrapper";
+import Wrapper from "../Wrapper";
 
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { RiMailSendFill } from "react-icons/ri";
@@ -10,43 +10,47 @@ import { RiMailSendFill } from "react-icons/ri";
 const Footer = () => {
   const SocialLinks = [
     {
-      social: <FaGithub className="mx-auto group-hover:text-white" />,
+      social: <FaGithub />,
       href: "https://github.com/thomsen1993",
       name: "GitHub",
+      target: "_blank",
     },
     {
-      social: (
-        <FaLinkedin className="mx-auto group-hover:text-white" />
-      ),
+      social: <FaLinkedin />,
       href: "https://www.linkedin.com/in/benny-thomsen-05687127a/",
       name: "Linkedin",
+      target: "_blank",
     },
     {
-      social: (
-        <FaInstagram className="mx-auto group-hover:text-white" />
-      ),
+      social: <FaInstagram />,
       href: "https://www.instagram.com/bennythoms/",
       name: "Instagram",
+      target: "_blank",
+    },
+    {
+      social: <RiMailSendFill />,
+      href: "mailto:benny.thomsen20@gmail.com",
+      name: "Email",
+      target: "",
     },
   ];
 
   return (
     <footer>
       <Wrapper id="footer">
-        <div className="flex sm:justify-between sm:flex-row flex-col items-center gap-4">
+        <div className="grid grid-cols-2 gap-4">
           {SocialLinks.map((link, index) => (
             <Link
               key={index}
               href={link.href}
-              target="_blank"
+              target={link.target}
               rel="noopener noreferrer"
-              className="btn"
+              className="border border-accent rounded-md hover:text-accent hover:translate-x-1 hover:-translate-y-1 hover:shadow-xl active:translate-x-0 active:translate-y-0 active:shadow-none transition duration-300 py-5"
             >
-              {link.social}
-              {link.name}
+              <i className="text-5xl flex justify-center ">{link.social}</i>
+              <p className="text-center">{link.name}</p>
             </Link>
           ))}
-          <Link href="mailto:benny.thomsen20@gmail.com" className="btn"><RiMailSendFill className=" mx-auto"/>Email</Link>
         </div>
       </Wrapper>
     </footer>
