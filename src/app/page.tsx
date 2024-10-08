@@ -55,7 +55,7 @@ const Home = () => {
 
   return (
     <main
-      className={`bg-background text-text ${theme?.theme} transition-colors duration-700`}
+      className={`bg-gradient-to-tl from-background via-background to-accent text-text ${theme?.theme} transition-colors duration-700`}
     >
       <Header theme={theme} setTheme={setTheme} themes={themes} />
       <Profile />

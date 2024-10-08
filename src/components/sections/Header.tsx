@@ -4,8 +4,6 @@ import Navigation from "../Navigation";
 import BurguerMunu from "../BurguerMunu";
 import ThemeButtons from "../ThemeButtons";
 
-import useSupabaseData from "@/hooks/useSupabaseData";
-
 interface ThemeOption {
   theme: string;
   color: string;
@@ -19,12 +17,6 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ theme, setTheme, themes }) => {
   const [mobileMenu, setMobileMenu] = useState(false);
-
-  // const { data } = useSupabaseData("degree");
-
-  // if (!data) {
-  //   return null;
-  // }
 
   return (
     <header className="sticky top-0 bg-gradient-to-b from-cardsBg via-cardsBg to-cardsBg/80 shadow-md p-5 z-50">
