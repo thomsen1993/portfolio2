@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import React, { useState } from "react";
 import Link from "next/link";
 import ScrollAnimations from "../ScrollAnimations";
@@ -35,7 +34,7 @@ interface Event {
   img: string;
 }
 
-const Projects: NextPage = () => {
+const Projects = () => {
   const [popUp, setPopUp] = useState<Event | null>(null);
 
   const { data } = useSupabaseData<Event>("projects");
