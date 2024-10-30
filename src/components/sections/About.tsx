@@ -27,7 +27,7 @@ const About: React.FC = () => {
 
   return (
     <ScrollAnimations>
-      <section id="about" className="max-w-3xl px-5 mt-10 mx-auto">
+      <section id="about" className="max-w-3xl mt-10 mx-auto">
         {data && (
           <div>
             <h2>About me</h2>

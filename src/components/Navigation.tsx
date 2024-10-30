@@ -31,6 +31,10 @@ const Navigation: React.FC<BurguerMenuProps> = ({
       href: "#degree",
     },
     {
+      text: "Projects",
+      href: "#projects",
+    },
+    {
       text: "Contact",
       href: "#contact",
     },

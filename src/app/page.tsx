@@ -11,6 +11,7 @@ import Process from "@/components/sections/Process";
 import Profile from "@/components/sections/Profile";
 import Frameworks from "@/components/sections/Frameworks";
 import Degree from "@/components/sections/Degree";
+import Projects from "@/components/sections/Projects";
 
 interface Theme {
   theme: string;
@@ -19,7 +20,7 @@ interface Theme {
 
 const themes: Theme[] = [
   { theme: "dark", color: "black" },
-  { theme: "light", color: "white" },
+  { theme: "light", color: "gray" },
   { theme: "red", color: "red" },
   { theme: "olive", color: "olive" },
 ];
@@ -55,7 +56,7 @@ const Home = () => {
 
   return (
     <main
-      className={`bg-gradient-to-tl from-background via-background to-accent text-text ${theme?.theme} transition-colors duration-700`}
+      className={`bg-background text-text ${theme?.theme} transition-colors duration-700`}
     >
       <Header theme={theme} setTheme={setTheme} themes={themes} />
       <Profile />
@@ -64,6 +65,7 @@ const Home = () => {
       <Process />
       <Frameworks />
       <Degree />
+      <Projects />
       <Contact />
       <Footer />
     </main>

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 
 import useSupabaseData from "@/hooks/useSupabaseData";
@@ -22,7 +20,7 @@ const Frameworks = () => {
   }
 
   return (
-    <section className="overflow-hidden pt-10">
+    <section className="overflow-hidden my-32">
       {data && (
         <>
           <h2>Frameworks</h2>

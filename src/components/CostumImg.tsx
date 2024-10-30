@@ -33,7 +33,7 @@ const CostumImg: React.FC<dataProps> = ({
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="bg-accent ext-blue-400 rounded-md px-5 py-2">Download file</span>
+            <span className="bg-accent rounded-md px-5 py-2">Download file</span>
           </a>
         )}
       </figure>
