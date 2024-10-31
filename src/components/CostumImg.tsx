@@ -1,5 +1,7 @@
 import React from "react";
 
+import Image from "next/image";
+
 interface dataProps {
   key: number;
   src: string;
@@ -18,9 +20,11 @@ const CostumImg: React.FC<dataProps> = ({
   return (
     <>
       <figure key={key} className="group relative mb-3">
-        <img
+        <Image
           src={src}
           alt={alt}
+          width={300}
+          height={200}
           className="wiggleBorder transition duration-300 sm:h-full h-32 w-full overflow-hidden object-cover"
         />
         <figcaption className="w-max bg-background border border-accent rounded-md -translate-y-3 px-3 mx-auto">

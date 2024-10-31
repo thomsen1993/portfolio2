@@ -10,6 +10,8 @@ import Error from "@/components/Error";
 import Wrapper from "../Wrapper";
 import { FlipWords } from "../ui/flip-words";
 
+import Image from "next/image";
+
 interface InfoEN {
   id: number;
   title: string;
@@ -59,9 +61,11 @@ const Profile: React.FC = () => {
       {infoEN && (
         <div className="grid sm:grid-cols-2 items-center gap-4">
           <div className="good">
-            <img
+            <Image
               src={infoEN[0].img}
               alt=""
+              width={1000}
+              height={160}
               className="wiggleBorder animate-bobble h-96 w-full object-top object-cover"
             />
             <p className="text-center border text-accent border-accent bg-accent/30 rounded-full px-2 mt-5">

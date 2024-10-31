@@ -9,6 +9,8 @@ import LoaderFeatured from "../LoaderFeatured";
 import Wrapper from "../Wrapper";
 import ScrollAnimations from "../ScrollAnimations";
 
+import Image from "next/image";
+
 interface dataProps {
   id: number;
   description: string;
@@ -42,9 +44,11 @@ const Featured = () => {
                     key={item.id}
                     className="relative group overflow-hidden"
                   >
-                    <img
+                    <Image
                       src={item.imgSrc}
                       alt=""
+                      width={300}
+                      height={200}
                       className="wiggleBorder group-hover:translate-y-[-120%] transition duration-300 my-2"
                     />
                     <figcaption className="absolute bottom-[-100%] group-hover:bottom-0 transition-all duration-300 text-sm">

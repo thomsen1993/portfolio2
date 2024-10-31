@@ -34,13 +34,14 @@ interface PopupCardProps {
 }
 
 const PopupCard: React.FC<PopupCardProps> = ({ data, setPopUp }) => {
-  if (!data) return null;
 
   const handleClosePopup = () => {
     setPopUp(null);
   };
 
   useEffect(() => {
+    if (!data) return;
+
     const handleEsc = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setPopUp(null);
@@ -54,7 +55,9 @@ const PopupCard: React.FC<PopupCardProps> = ({ data, setPopUp }) => {
       document.removeEventListener("keydown", handleEsc);
       document.body.style.overflow = ""; // Re-enable background scrolling
     };
-  }, [setPopUp]);
+  }, [data, setPopUp]);
+
+  if (!data) return null;
 
   return (
     <div
